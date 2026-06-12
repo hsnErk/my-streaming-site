@@ -1,64 +1,211 @@
-English Version
-Netflix-Like Movie/Series Platform Web Application
-A responsive, type-safe full-stack film streaming dashboard built using Next.js (App Router), TypeScript, and Tailwind CSS. This application implements clean architectural boundaries guided by the SOLID design principles, complete with route-guarded authentication, live global search across polymorphic arrays, and local persistence for custom watchlist management.
+ru# 🎬 HECEFLIX — Netflix Benzeri Film/Dizi Platformu
 
-Evaluation Quick Start
-To evaluate this application with zero local configuration overhead, use the official prescriptive testing accounts below:
+🇹🇷 Türkçe | 🇬🇧 [English below](#-heceflix--netflix-like-movieseries-platform)
 
-Demo Credentials
-Email: test@example.com
+Next.js (App Router), TypeScript ve Tailwind CSS ile geliştirilmiş; duyarlı (responsive) ve tip güvenli bir film/dizi akış platformu arayüzü.
 
-Password: 123456
 
-Features Implemented
-Core Mandatory Requirements
-Responsive Layout & Design (35 Points): Pixel-perfect cinematic dark mode matching the traditional Netflix aesthetic. Completely responsive scaling using Tailwind fluid breakpoints across mobile, tablet, and desktop interfaces. Includes horizontal scrolling genre strips with custom overlay navigation arrows.
 
-Dynamic Home Screen & Hero Banner: Features an immersive widescreen hero graphic fetched dynamically via abstract contract calls, styled using backdrop blur filters and custom linear bottom gradients to eliminate harsh edges.
+## 📸 Ekran Görüntüleri
 
-Dynamic Title Detail Routing (/title/[id]): Fully dynamic Next.js parameter capture segment that splits presentational component layout wrappers from data retrieval cycles. Includes an automated custom fallback to the Next native notFound() component tree when encountering unregistered tracking vectors.
+<!-- TODO: 2-3 ekran görüntüsü ekleyin. Örnek:
+![Ana Sayfa](docs/screenshots/home.png)
+![Detay Sayfası](docs/screenshots/detail.png)
+-->
 
-State Persistence Control ("My List"): Global cross-component data synching powered by clean React Context layers. Saves, appends, updates, and deduplicates custom watchlists via persistent browser storage hooks that instantly recalculate lists on current render screens.
+## 🔑 Demo Giriş Bilgileri
 
-Full-Spectrum Filter Search: Client-side instant query evaluation mechanism wrapped elegantly inside an app-level React <Suspense> container to pass zero-loss static optimization build checks.
+| Alan | Değer |
+| --- | --- |
+| E-posta | `test@example.com` |
+| Şifre | `123456` |
 
-Bonus Items Included
-Contextual Category Recommendation Matrix: The Title Details screen extracts properties from the targeted module to instantly build a local "More Like This" row containing shared tags while cleanly ignoring duplication of the primary source asset.
+## 🚀 Kurulum ve Çalıştırma
 
-Browser Preflight Reset Validation: Form text nodes inherit text element variables safely across native Tailwind preflight reset configurations to guarantee consistent user field entry readability.
+### Gereksinimler
 
-Turkish Version
-Netflix Benzeri Film/Dizi Platformu Web Uygulaması
-Next.js (App Router), TypeScript ve Tailwind CSS kullanılarak geliştirilmiş; duyarlı (responsive) ve tip güvenli (type-safe) bir full-stack film akış panelidir. Bu uygulama, SOLID tasarım prensipleri rehberliğinde temiz mimari sınırlar uygulamanın yanı sıra, rota korumalı kimlik doğrulama (authentication), polimorfik diziler üzerinde canlı genel arama ve özel izleme listesi yönetimi için yerel kalıcılık (local persistence) özelliklerini barındırır.
+- Node.js **20.9 veya üzeri**
+- npm
 
-Değerlendirme İçin Hızlı Başlangıç
-Bu uygulamayı yerel kurulum gereksinimleri olmadan değerlendirmek için aşağıdaki resmi test hesaplarını kullanabilirsiniz:
+### Adımlar
 
-Demo Giriş Bilgileri
-E-posta: test@example.com
+```bash
+# 1. Depoyu klonlayın
+git clone https://github.com/KULLANICI-ADINIZ/REPO-ADINIZ.git
+cd REPO-ADINIZ
 
-Şifre: 123456
+# 2. Bağımlılıkları yükleyin
+npm install
 
-Uygulanan Özellikler
-Temel Zorunlu Gereksinimler
-Duyarlı Düzen ve Tasarım (35 Puan): Geleneksel Netflix estetiğine uygun, piksel düzeyinde mükemmel sinematik karanlık mod. Mobil, tablet ve masaüstü arayüzlerinde Tailwind akışkan kesme noktaları (breakpoints) kullanılarak tamamen duyarlı ölçeklendirme. Özel yön oklarına sahip yatay kaydırılabilir tür şeritleri içerir.
+# 3. Geliştirme sunucusunu başlatın
+npm run dev
+```
 
-Dinamik Ana Ekran ve Tanıtım (Hero) Afişi: Soyut sözleşme (contract) çağrıları aracılığıyla dinamik olarak getirilen, keskin kenarları ortadan kaldırmak için arka plan bulanıklaştırma (backdrop-blur) filtreleri ve özel doğrusal alt geçiş efektleri (gradients) ile canlandırılmış geniş ekran bir tanıtım görseli barındırır.
+Tarayıcıda [http://localhost:3000](http://localhost:3000) adresini açın ve yukarıdaki demo bilgileriyle giriş yapın.
 
-Dinamik Başlık Detay Rotası (/title/[id]): Sunumsal bileşen düzeni sarmalayıcılarını veri getirme döngülerinden ayıran tamamen dinamik Next.js parametre yakalama segmenti. Kayıtlı olmayan bir kimlik algılandığında yerel Next notFound() bileşen ağacına otomatik bir geçiş içerir.
+Production derlemesi için:
 
-Durum Kalıcılık Kontrolü ("Listem"): Temiz React Context katmanları tarafından desteklenen, bileşenler arası küresel veri senkronizasyonu. Tarayıcı depolama kancaları (hooks) vasıtasıyla özel izleme listelerini kaydeder, ekler, günceller ve tekilleştirir; listeleri mevcut render ekranlarında anında yeniden hesaplar.
+```bash
+npm run build
+npm start
+```
 
-Tam Kapsamlı Filtreli Arama: Sıfır kayıplı statik optimizasyon derleme kontrollerinden geçebilmesi için uygulama düzeyinde bir React <Suspense> kapsayıcısı içine temiz bir şekilde sarılmış, istemci tarafı anlık sorgu değerlendirme mekanizması.
+## ✨ Özellikler
 
-Dahil Edilen Bonus Maddeler
-Bağlamsal Kategori Öneri Matrisi: Başlık Detayları ekranı, hedeflenen modülden özellikleri çıkararak, ana varlığın kopyalanmasını temiz bir şekilde göz ardı ederken, paylaşılan etiketleri içeren yerel bir "Bunun Gibiler" satırını anında oluşturur.
+### Temel Özellikler
 
-Tarayıcı Ön Kontrol (Preflight) Sıfırlama Doğrulaması: Form metin düğümleri, kullanıcı alan girişlerinin tutarlı okunabilirliğini garanti etmek için Tailwind ön kontrol sıfırlama yapılandırmaları altında metin öğesi değişkenlerini güvenli bir şekilde devralır.
+- **Netflix benzeri tasarım:** Karanlık tema, hero banner, yatay kaydırılabilir kategori şeritleri, kırmızı HECEFLIX markası
+- **Tam duyarlı (responsive) düzen:** Mobil hamburger menü, akışkan kart ızgaraları, tüm ekran boyutlarına uyum
+- **Ana sayfa:** Öne çıkan içerikli hero bölümü + türlere göre içerik satırları
+- **Navbar:** Ana Sayfa, Diziler, Filmler, **Yeni Eklenenler**, Listem bağlantıları; arama ikonu ve profil avatarı
+- **İçerik kartları:** Poster, başlık, tür, yıl, puan ve hover'da Listem ekle/çıkar butonu
+- **Detay sayfaları:** `/movie/:id` ve `/series/:id` dinamik rotaları; kayıtlı olmayan ya da yanlış türdeki id'ler için 404 (`notFound()`)
+- **Arama:** Başlık, açıklama, tür ve oyuncu üzerinden arama; `?q=` URL parametresi desteği. Türkçe tür adları da çalışır (ör. **"bilim kurgu"** araması Sci-Fi içerikleri bulur)
+- **Listem:** Ekleme/çıkarma, tekilleştirme, `localStorage` ile kalıcılık, tüm bileşenlerde anlık senkronizasyon (React Context)
+- **Giriş:** Doğrulama, hata mesajı, başarılı girişte yönlendirme ve tüm sayfalarda rota koruması (route guard)
+- **Temiz mimari:** `app / components / context / lib / data` katmanları; veri erişimi `ContentRepository` arayüzü üzerinden (repository pattern)
 
-export interface ContentRepository {
-  getAll(): Promise<CardContent[]>;
-  getById(id: number): Promise<Content | null>;
-  search(query: string): Promise<CardContent[]>;
-  similarTo(id: number): Promise<CardContent[]>;
-}
+### Bonus Özellikler
+
+- 🎞️ **Fragman modalı:** Detay sayfasındaki Play butonu, YouTube fragmanını oynatan bir video modalı açar (ESC veya arka plana tıklayarak kapanır)
+- 💀 **Skeleton yükleme ekranları:** Listem, Arama ve sayfa geçişlerinde spinner yerine iskelet kartlar
+- 🎛️ **Tür ve yıl filtreleri:** Filmler ve Diziler sayfalarında istemci taraflı filtreleme ve sonuç sayacı
+- 🤝 **"Bunun Gibiler":** Detay sayfasında ortak türlere göre öneri satırı
+
+## 🗺️ Rotalar
+
+| Rota | Açıklama |
+| --- | --- |
+| `/` | Ana sayfa (hero + kategori satırları) |
+| `/movie/:id` | Film detayı (id bir film değilse 404) |
+| `/series/:id` | Dizi detayı (id bir dizi değilse 404) |
+| `/movies` | Tüm filmler (tür/yıl filtreli) |
+| `/series` | Tüm diziler (tür/yıl filtreli) |
+| `/new` | Yeni Eklenenler (yıla göre en yeniden eskiye) |
+| `/my-list` | Kişisel izleme listesi |
+| `/search` | Arama |
+| `/login` | Giriş |
+| `/title/:id` | Eski rota — içeriğin türüne göre `/movie/:id` veya `/series/:id`'ye yönlendirir |
+
+## 🛠️ Kullanılan Teknolojiler
+
+- **Next.js 16** (App Router, Server Components)
+- **React 19** + **TypeScript**
+- **Tailwind CSS 4**
+- **lucide-react** (ikonlar)
+
+## 📁 Proje Yapısı
+
+```
+app/         → Sayfalar ve rotalar (App Router)
+components/  → Yeniden kullanılabilir arayüz bileşenleri
+context/     → Auth ve Listem için React Context sağlayıcıları
+lib/         → Veri erişim katmanı (ContentRepository arayüzü + mock implementasyon)
+data/        → Mock film/dizi kataloğu
+```
+
+---
+
+# 🎬 HECEFLIX — Netflix-Like Movie/Series Platform
+
+A responsive, type-safe movie/series streaming platform UI built with Next.js (App Router), TypeScript, and Tailwind CSS.
+
+
+
+## 📸 Screenshots
+
+<!-- TODO: add 2-3 screenshots. Example:
+![Home page](docs/screenshots/home.png)
+![Detail page](docs/screenshots/detail.png)
+-->
+
+## 🔑 Demo Credentials
+
+| Field | Value |
+| --- | --- |
+| Email | `test@example.com` |
+| Password | `123456` |
+
+## 🚀 Getting Started
+
+### Requirements
+
+- Node.js **20.9 or newer**
+- npm
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
+cd YOUR-REPO
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser and sign in with the demo credentials above.
+
+For a production build:
+
+```bash
+npm run build
+npm start
+```
+
+## ✨ Features
+
+### Core Features
+
+- **Netflix-like design:** Dark theme, hero banner, horizontally scrollable category rows, red HECEFLIX branding
+- **Fully responsive layout:** Mobile hamburger menu, fluid card grids, adapts to all screen sizes
+- **Home page:** Hero section with a featured title + genre-based content rows
+- **Navbar:** Home, Series, Movies, **Yeni Eklenenler** (New Additions), My List links; search icon and profile avatar
+- **Content cards:** Poster, title, genre, year, rating, and a hover add/remove My List button
+- **Detail pages:** Dynamic `/movie/:id` and `/series/:id` routes; unknown or wrong-type ids return 404 via `notFound()`
+- **Search:** Matches title, description, genre, and cast; supports `?q=` URL parameter. Turkish genre terms also work (e.g. searching **"bilim kurgu"** finds Sci-Fi titles)
+- **My List:** Add/remove with deduplication, persisted in `localStorage`, synced across components via React Context
+- **Login:** Validation, error message, redirect on success, and a route guard protecting every page
+- **Clean architecture:** `app / components / context / lib / data` layers; data access goes through a `ContentRepository` interface (repository pattern)
+
+### Bonus Features
+
+- 🎞️ **Trailer modal:** The Play button on detail pages opens a video modal playing the YouTube trailer (closes on ESC or backdrop click)
+- 💀 **Skeleton loading states:** My List, Search, and route transitions show skeleton cards instead of spinners
+- 🎛️ **Genre & year filters:** Client-side filtering with a result counter on the Movies and Series pages
+- 🤝 **"More Like This":** Recommendation row on detail pages based on shared genres
+
+## 🗺️ Routes
+
+| Route | Description |
+| --- | --- |
+| `/` | Home (hero + category rows) |
+| `/movie/:id` | Movie detail (404 if the id is not a movie) |
+| `/series/:id` | Series detail (404 if the id is not a series) |
+| `/movies` | All movies (with genre/year filters) |
+| `/series` | All series (with genre/year filters) |
+| `/new` | New additions (newest first by year) |
+| `/my-list` | Personal watchlist |
+| `/search` | Search |
+| `/login` | Sign in |
+| `/title/:id` | Legacy route — redirects to `/movie/:id` or `/series/:id` based on content type |
+
+## 🛠️ Tech Stack
+
+- **Next.js 16** (App Router, Server Components)
+- **React 19** + **TypeScript**
+- **Tailwind CSS 4**
+- **lucide-react** (icons)
+
+## 📁 Project Structure
+
+```
+app/         → Pages and routes (App Router)
+components/  → Reusable UI components
+context/     → React Context providers for Auth and My List
+lib/         → Data access layer (ContentRepository interface + mock implementation)
+data/        → Mock movie/series catalog
+```

@@ -28,7 +28,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Hydrate auth state from localStorage after mount (localStorage is not
+    // available during server rendering, so this cannot be a lazy initializer).
     const saved = localStorage.getItem("user");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time client-side hydration from browser storage
     if (saved) setUser(JSON.parse(saved) as User);
     setLoading(false);
   }, []);

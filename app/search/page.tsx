@@ -4,8 +4,9 @@ import { useState, useEffect, type FormEvent, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { repository } from "@/lib/repository";
 import { ContentCard } from "@/components/ContentCard";
+import { SkeletonGrid } from "@/components/SkeletonCard";
 import type { CardContent } from "@/data/contents";
-import { Search as SearchIcon, Loader2 } from "lucide-react";
+import { Search as SearchIcon } from "lucide-react";
 
 // --------------------------------------------------------
 // 1. Client component that uses useSearchParams
@@ -19,13 +20,6 @@ function SearchContent() {
   const [results, setResults] = useState<CardContent[]>([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
-
-  // If the URL has a ?q= parameter, automatically search on mount
-  useEffect(() => {
-    if (initialQuery) {
-      performSearch(initialQuery);
-    }
-  }, [initialQuery]);
 
   const performSearch = async (searchTerm: string) => {
     if (!searchTerm.trim()) {
@@ -45,6 +39,14 @@ function SearchContent() {
       setLoading(false);
     }
   };
+
+  // If the URL has a ?q= parameter, automatically search on mount
+  useEffect(() => {
+    if (initialQuery) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync the results with the ?q= URL parameter
+      performSearch(initialQuery);
+    }
+  }, [initialQuery]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -77,12 +79,7 @@ function SearchContent() {
         </button>
       </form>
 
-      {loading && (
-        <div className="flex items-center gap-2 text-neutral-400">
-          <Loader2 size={20} className="animate-spin" />
-          Searching...
-        </div>
-      )}
+      {loading && <SkeletonGrid count={8} />}
 
       {!loading && searched && results.length === 0 && (
         <p className="text-neutral-400">No results found. Try a different search term.</p>
@@ -110,9 +107,10 @@ export default function SearchPage() {
   return (
     <Suspense
       fallback={
-        <div className="flex min-h-screen items-center justify-center bg-neutral-950 text-neutral-400">
-          <Loader2 size={24} className="animate-spin" />
-        </div>
+        <main className="min-h-screen bg-neutral-950 px-4 py-24 md:px-10">
+          <div className="mb-8 h-9 w-40 animate-pulse rounded bg-neutral-800" />
+          <SkeletonGrid count={8} />
+        </main>
       }
     >
       <SearchContent />

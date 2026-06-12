@@ -9,6 +9,7 @@ const links = [
   { label: "Home", href: "/" },
   { label: "Series", href: "/series" },
   { label: "Movies", href: "/movies" },
+  { label: "Yeni Eklenenler", href: "/new" },
   { label: "My List", href: "/my-list" },
 ];
 
@@ -25,7 +26,7 @@ export function Navbar() {
       <div className="flex items-center justify-between px-4 py-4 md:px-10">
         <div className="flex items-center gap-8">
           <Link href="/" className="text-xl font-bold text-red-600 md:text-2xl">
-            NETFLIX
+            HECEFLIX
           </Link>
           {/* Desktop links — hidden on mobile */}
           <ul className="hidden gap-6 text-sm text-gray-300 md:flex">
@@ -51,6 +52,16 @@ export function Navbar() {
             >
               Sign Out
             </button>
+          )}
+          {/* Profile avatar */}
+          {user && (
+            <div
+              title={user.email}
+              aria-label={`Signed in as ${user.email}`}
+              className="flex h-8 w-8 items-center justify-center rounded bg-red-600 text-sm font-semibold text-white"
+            >
+              {user.email.charAt(0).toUpperCase()}
+            </div>
           )}
           {/* Hamburger — mobile only */}
           <button

@@ -17,7 +17,7 @@ export function ContentCard({ content }: { content: CardContent }) {
 
   return (
     <Link
-      href={`/title/${content.id}`}
+      href={`/${content.type}/${content.id}`}
       className="group relative block w-44 shrink-0 overflow-hidden rounded-md bg-neutral-900 transition-transform duration-200 hover:scale-105"
     >
       <img src={content.thumbnail} alt={content.title} className="h-64 w-full object-cover" />

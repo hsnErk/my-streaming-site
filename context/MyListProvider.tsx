@@ -20,7 +20,9 @@ export function MyListProvider({ children }: { children: ReactNode }) {
   const [ids, setIds] = useState<number[]>([]);
 
   useEffect(() => {
+    // Hydrate the list from localStorage after mount (not available during SSR).
     const stored = localStorage.getItem("myList");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time client-side hydration from browser storage
     if (stored) setIds(JSON.parse(stored) as number[]);
   }, []);
 

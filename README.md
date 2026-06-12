@@ -1,17 +1,22 @@
-ru# 🎬 HECEFLIX — Netflix Benzeri Film/Dizi Platformu
+# 🎬 HECEFLIX — Netflix Benzeri Film/Dizi Platformu
 
 🇹🇷 Türkçe | 🇬🇧 [English below](#-heceflix--netflix-like-movieseries-platform)
 
 Next.js (App Router), TypeScript ve Tailwind CSS ile geliştirilmiş; duyarlı (responsive) ve tip güvenli bir film/dizi akış platformu arayüzü.
 
-
-
 ## 📸 Ekran Görüntüleri
 
-<!-- TODO: 2-3 ekran görüntüsü ekleyin. Örnek:
+**Ana Sayfa**
+
 ![Ana Sayfa](docs/screenshots/home.png)
-![Detay Sayfası](docs/screenshots/detail.png)
--->
+
+**Yeni Eklenenler**
+
+![Yeni Eklenenler](docs/screenshots/new-additions.png)
+
+**Listem**
+
+![Listem](docs/screenshots/my-list.png)
 
 ## 🔑 Demo Giriş Bilgileri
 
@@ -110,14 +115,19 @@ data/        → Mock film/dizi kataloğu
 
 A responsive, type-safe movie/series streaming platform UI built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-
-
 ## 📸 Screenshots
 
-<!-- TODO: add 2-3 screenshots. Example:
+**Home page**
+
 ![Home page](docs/screenshots/home.png)
-![Detail page](docs/screenshots/detail.png)
--->
+
+**New Additions (Yeni Eklenenler)**
+
+![New Additions](docs/screenshots/new-additions.png)
+
+**My List**
+
+![My List](docs/screenshots/my-list.png)
 
 ## 🔑 Demo Credentials
 
